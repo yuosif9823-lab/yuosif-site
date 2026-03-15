@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>لوحة أدوات يوسف</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<h1>لوحة أدوات يوسف</h1>
+<p>منصة تحليل الشبكات والأدوات</p>
+</header>
+
+<div class="container">
+
+<div class="tool">
+<h2>فحص IP</h2>
+<input id="ipInput" placeholder="ادخل IP">
+<button onclick="scanIP()">فحص</button>
+<p id="ipResult"></p>
+</div>
+
+<div class="tool">
+<h2>اختبار الاتصال</h2>
+<button onclick="checkConnection()">اختبار</button>
+<p id="connectionResult"></p>
+</div>
+
+<div class="tool">
+<h2>تحليل الأمان</h2>
+<button onclick="securityCheck()">تحليل</button>
+<p id="securityResult"></p>
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
