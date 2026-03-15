@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
+
 <meta charset="UTF-8">
+
 <title>لوحة أدوات يوسف</title>
+
 <link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+
 </head>
 
 <body>
@@ -32,15 +38,9 @@
 
 </div>
 
-<div class="tool">
+<div id="map"></div>
 
-<h3>مؤشر الأمان</h3>
-
-<button onclick="securityCheck()">تحليل الأمان</button>
-
-<p id="securityResult"></p>
-
-</div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
 <script src="script.js"></script>
 
