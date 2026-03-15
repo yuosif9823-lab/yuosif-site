@@ -1,3 +1,9 @@
+let map=L.map('map').setView([20,0],2);
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
+maxZoom:19
+}).addTo(map);
+
 async function scanIP(){
 
 let ip=document.getElementById("ipInput").value;
@@ -24,22 +30,8 @@ let data=await response.json();
 document.getElementById("locationResult").innerHTML=
 "الموقع التقريبي: "+data.city+" - "+data.country_name;
 
-}
+map.setView([data.latitude,data.longitude],10);
 
-function securityCheck(){
+L.marker([data.latitude,data.longitude]).addTo(map);
 
-let result=["آمن ✅","نشاط غير طبيعي ⚠️","لم يتم اكتشاف اختراق"];
-
-let random=result[Math.floor(Math.random()*result.length)];
-
-document.getElementById("securityResult").innerHTML=random;
-
-}
-
-#map{
-height:400px;
-width:80%;
-margin:auto;
-margin-top:20px;
-border-radius:10px;
 }
