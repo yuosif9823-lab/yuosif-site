@@ -1,33 +1,37 @@
-function scanIP(){
+async function scanIP(){
 
 let ip=document.getElementById("ipInput").value;
 
+let response=await fetch("https://ipapi.co/"+ip+"/json/");
+
+let data=await response.json();
+
 document.getElementById("ipResult").innerHTML=
-"تم تحليل IP: "+ip;
+"الدولة: "+data.country_name+
+"<br>المدينة: "+data.city+
+"<br>مزود الانترنت: "+data.org;
 
 }
 
-function checkConnection(){
+async function locateIP(){
 
-let status=["الاتصال آمن","لا يوجد اختراق","الشبكة مستقرة"];
+let ip=document.getElementById("ipInput").value;
 
-let result=status[Math.floor(Math.random()*status.length)];
+let response=await fetch("https://ipapi.co/"+ip+"/json/");
 
-document.getElementById("connectionResult").innerHTML=result;
+let data=await response.json();
+
+document.getElementById("locationResult").innerHTML=
+"الموقع التقريبي: "+data.city+" - "+data.country_name;
 
 }
 
 function securityCheck(){
 
-let security=[
-"النظام آمن ✅",
-"لم يتم اكتشاف اختراق",
-"تم اكتشاف اتصال مشبوه ⚠️",
-"يوجد نشاط غير طبيعي"
-];
+let result=["آمن ✅","نشاط غير طبيعي ⚠️","لم يتم اكتشاف اختراق"];
 
-let result=security[Math.floor(Math.random()*security.length)];
+let random=result[Math.floor(Math.random()*result.length)];
 
-document.getElementById("securityResult").innerHTML=result;
+document.getElementById("securityResult").innerHTML=random;
 
 }
