@@ -35,3 +35,11 @@ let random=result[Math.floor(Math.random()*result.length)];
 document.getElementById("securityResult").innerHTML=random;
 
 }
+
+#map{
+height:400px;
+width:80%;
+margin:auto;
+margin-top:20px;
+border-radius:10px;
+}
